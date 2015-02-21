@@ -118,8 +118,7 @@ include $(BUILD_STATIC_LIBRARY)
 #original path: nsock/src/libnsock.a
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS:= -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 \
-               -DOPENSSL_NO_DEPRECATED
+LOCAL_CFLAGS:= -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2
 # fixed flags
 LOCAL_CFLAGS+= -ffunction-sections -fdata-sections
 
@@ -154,10 +153,9 @@ LOCAL_SRC_FILES:= \
 	nsock/src/proxy_socks4.c
 LOCAL_STATIC_LIBRARIES:= \
 	libnbase\
-	libpcap
-LOCAL_SHARED_LIBRARIES:= \
+	libpcap\
 	libssl\
-	libcrypto
+	libcrypto_static
 LOCAL_MODULE := libnsock
 
 include $(BUILD_STATIC_LIBRARY)
@@ -203,10 +201,9 @@ LOCAL_STATIC_LIBRARIES:= \
 	libnbase\
 	libdnet\
 	libpcre\
-	libpcap
-LOCAL_SHARED_LIBRARIES:= \
+	libpcap\
 	libssl\
-	libcrypto
+	libcrypto_static
 LOCAL_MODULE := libnetutil
 
 include $(BUILD_STATIC_LIBRARY)
@@ -288,12 +285,10 @@ LOCAL_STATIC_LIBRARIES:= \
 	libnetutil\
 	libdnet\
 	liblua\
-	liblinear
-LOCAL_SHARED_LIBRARIES:= \
+	liblinear\
 	libssl\
-	libcrypto\
+	libcrypto_static
 	
 LOCAL_MODULE := nmap
 
 include $(BUILD_EXECUTABLE)
-
