@@ -154,7 +154,7 @@ LOCAL_SRC_FILES:= \
 LOCAL_STATIC_LIBRARIES:= \
 	libnbase\
 	libpcap\
-	libssl\
+	libssl_static\
 	libcrypto_static
 LOCAL_MODULE := libnsock
 
@@ -202,7 +202,7 @@ LOCAL_STATIC_LIBRARIES:= \
 	libdnet\
 	libpcre\
 	libpcap\
-	libssl\
+	libssl_static\
 	libcrypto_static
 LOCAL_MODULE := libnetutil
 
@@ -286,7 +286,7 @@ LOCAL_STATIC_LIBRARIES:= \
 	libdnet\
 	liblua\
 	liblinear\
-	libssl\
+	libssl_static\
 	libcrypto_static
 	
 LOCAL_MODULE := nmap
